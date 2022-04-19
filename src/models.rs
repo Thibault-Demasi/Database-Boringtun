@@ -50,7 +50,6 @@ pub struct VpnUser {
     pub crypted_password: String,
     pub admin: bool,
     pub public_key: Option<String>,
-    pub private_key: Option<String>,
     pub interface_address: Option<String>,
     pub created_at: PgTimestamp,
 }
@@ -64,7 +63,6 @@ pub struct NewVpnUser<'a>{
     pub crypted_password: &'a str,
     pub admin: &'a bool,
     pub public_key: &'a str,
-    pub private_key: &'a str,
     pub interface_address: &'a str,
     // pub created_at: Timestamp,
 }

@@ -13,7 +13,6 @@ fn main() {
 
     let arguments: Vec<String> = env::args().collect();
     let publickey = &arguments[2];
-    let privatekey = &arguments[3];
 
     let mut interfaceaddress = genip::ip_generator().to_string();
 
@@ -34,7 +33,7 @@ fn main() {
     }
 
     let user = diesel::update(vpnuser.find(id))
-        .set((verified_email.eq(true), public_key.eq(publickey), private_key.eq(privatekey), interface_address.eq(interfaceaddress)))
+        .set((verified_email.eq(true), public_key.eq(publickey), interface_address.eq(interfaceaddress)))
         .get_result::<VpnUser>(&connection)
         .expect(&format!("Unable to find user {}", id));
     

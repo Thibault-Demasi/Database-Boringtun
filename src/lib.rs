@@ -49,7 +49,7 @@ pub fn create_peer<'a>(conn: &PgConnection, allowed_ips: &'a str, endpoint: &'a 
         .expect("Error saving new peer")
 }
 
-pub fn create_user<'a>(conn: &PgConnection, email: &'a str, verified_mail: &'a bool, private_salt: &'a str, crypted_password: &'a str, admin: &'a bool, public_key: &'a str, private_key: &'a str, interface_address: &'a str) -> VpnUser{
+pub fn create_user<'a>(conn: &PgConnection, email: &'a str, verified_mail: &'a bool, private_salt: &'a str, crypted_password: &'a str, admin: &'a bool, public_key: &'a str, interface_address: &'a str) -> VpnUser{
     use schema::vpnuser;
 
     let new_user = NewVpnUser{
@@ -59,7 +59,6 @@ pub fn create_user<'a>(conn: &PgConnection, email: &'a str, verified_mail: &'a b
         crypted_password: crypted_password,
         admin: admin,
         public_key: public_key,
-        private_key: private_key,
         interface_address: interface_address,
         // created_at: created_at,
     }; 

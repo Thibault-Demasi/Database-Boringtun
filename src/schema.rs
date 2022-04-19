@@ -27,7 +27,6 @@ table! {
         crypted_password -> Varchar,
         admin -> Bool,
         public_key -> Nullable<Varchar>,
-        private_key -> Nullable<Varchar>,
         interface_address -> Nullable<Varchar>,
         created_at -> Timestamptz,
     }

@@ -13,10 +13,9 @@ fn main() {
     let crypted_password = String::from("123456");
     let admin: bool = false;
     let public_key = String::from("");
-    let private_key = String::from("");
     let interface_address = String::from("");
 
-    let signup = create_user(&connection, &email, &verified_mail, &private_salt, &crypted_password, &admin, &public_key, &private_key, &interface_address);
+    let signup = create_user(&connection, &email, &verified_mail, &private_salt, &crypted_password, &admin, &public_key, &interface_address);
     println!("Saved draft {} with id {}", email, signup.id_user);
 
 }

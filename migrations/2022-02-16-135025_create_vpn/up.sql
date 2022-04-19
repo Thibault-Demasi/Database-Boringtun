@@ -15,7 +15,6 @@ CREATE TABLE public.vpnUser(
 	crypted_password    VARCHAR (150) NOT NULL ,
 	admin               BOOL  NOT NULL ,
 	public_key          VARCHAR (50)  ,
-	private_key         VARCHAR (50)  ,
 	interface_address   VARCHAR (50)  ,
 	created_at	        TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP  NOT NULL  ,
 	CONSTRAINT vpnUser_PK PRIMARY KEY (id_user)
